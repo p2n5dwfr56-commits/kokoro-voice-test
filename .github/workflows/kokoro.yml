@@ -25,7 +25,6 @@ jobs:
               if k.startswith('en_GB'): print(k, v[k].get('quality') if 'quality' in v[k] else '', v[k]['language']['name_english'], v[k]['num_speakers'])
           PY
       - run: sudo apt-get update && sudo apt-get install -y espeak-ng
-      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu && python -m pip install kokoro soundfile
-      - run: python make_samples.py
+      - run: python -m pip install piper-tts && python make_piper.py
       - uses: actions/upload-artifact@v4
-        with: { name: kokoro-samples, path: '*.wav', retention-days: 7 }
+        with: { name: piper-samples, path: '*.wav', retention-days: 7 }
