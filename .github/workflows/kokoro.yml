@@ -1,5 +1,8 @@
 name: kokoro-voice-samples
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
 jobs:
   samples:
     runs-on: ubuntu-latest
@@ -12,6 +15,15 @@ jobs:
         run: |
           curl -fsSIL https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-v1_0.pth -o /dev/null -w "model: %{http_code}\n"
           for v in bm_george bm_lewis bf_emma; do curl -fsSIL https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/voices/$v.pt -o /dev/null -w "$v: %{http_code}\n"; done
+      - name: List Piper English voices (alternative-accent investigation)
+        run: |
+          curl -fsSL https://huggingface.co/rhasspy/piper-voices/resolve/main/voices.json -o voices.json
+          python - <<'PY'
+          import json
+          v=json.load(open('voices.json'))
+          for k in sorted(v):
+              if k.startswith('en_GB'): print(k, v[k].get('quality') if 'quality' in v[k] else '', v[k]['language']['name_english'], v[k]['num_speakers'])
+          PY
       - run: sudo apt-get update && sudo apt-get install -y espeak-ng
       - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu && python -m pip install kokoro soundfile
       - run: python make_samples.py
