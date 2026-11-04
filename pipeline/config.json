@@ -1,5 +1,5 @@
 {
-  "pipeline_version": "0.1.0-poc",
+  "pipeline_version": "0.1.1-poc",
   "model": {
     "hf_repo": "ResembleAI/chatterbox",
     "hf_revision": null,
@@ -25,13 +25,15 @@
     "trim_threshold_db": -50,
     "pad_ms": 80,
     "target_lufs": -16.0,
-    "true_peak_target_dbtp": -1.8,
     "true_peak_ceiling_dbtp": -1.5,
     "lufs_tolerance": 1.0,
-    "lra": 11,
     "sample_rate": 44100,
     "channels": 1,
-    "mp3_bitrate": "96k"
+    "mp3_bitrate": "96k",
+    "limiter_ceiling_dbfs": -2.5,
+    "max_iterations": 4,
+    "converge_lu": 0.3,
+    "method": "gain+alimiter, iterated, verified on the delivered MP3"
   },
   "qa": {
     "asr_model": "base.en",
@@ -39,6 +41,11 @@
     "words_per_second_min": 1.8,
     "words_per_second_max": 4.2,
     "max_attempts": 3,
-    "key_terms": ["false nine", "double pivot", "high press", "four two three one"]
+    "key_terms": [
+      "false nine",
+      "double pivot",
+      "high press",
+      "four two three one"
+    ]
   }
 }

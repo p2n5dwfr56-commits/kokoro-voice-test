@@ -73,19 +73,24 @@ def ff_measure(path, extra=""):
     return json.loads(r.stderr[r.stderr.rindex("{"): r.stderr.rindex("}") + 1])
 
 def encode(x, sr, pp, mp3_path):
+    """Trim/pad, then gain + limiter, iterated until the delivered MP3 measures at the target loudness."""
     WORK.mkdir(exist_ok=True); tmp = WORK / "tmp.wav"
     sf.write(tmp, trim_pad(x, sr, pp), sr, subtype="FLOAT")
-    m = ff_measure(tmp)
-    f = (f"loudnorm=I={pp['target_lufs']}:TP={pp['true_peak_target_dbtp']}:LRA={pp['lra']}"
-         f":measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
-         f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
-    subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(tmp), "-af", f,
-                    "-ar", str(pp["sample_rate"]), "-ac", str(pp["channels"]), "-c:a", "libmp3lame",
-                    "-b:a", pp["mp3_bitrate"], "-map_metadata", "-1", "-fflags", "+bitexact", "-flags:a", "+bitexact",
-                    str(mp3_path)], check=True)
-    fin = ff_measure(mp3_path)  # measure the delivered MP3 itself
-    lufs, tp = float(fin["input_i"]), float(fin["input_tp"])
-    return {"integrated_lufs": round(lufs, 2), "true_peak_dbtp": round(tp, 2),
+    gain = pp["target_lufs"] - float(ff_measure(tmp)["input_i"])
+    lim = 10 ** (pp["limiter_ceiling_dbfs"] / 20)
+    for i in range(pp["max_iterations"]):
+        f = f"volume={gain:.3f}dB,alimiter=limit={lim:.4f}:attack=2:release=30:level=0"
+        subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(tmp), "-af", f,
+                        "-ar", str(pp["sample_rate"]), "-ac", str(pp["channels"]), "-c:a", "libmp3lame",
+                        "-b:a", pp["mp3_bitrate"], "-map_metadata", "-1", "-fflags", "+bitexact", "-flags:a", "+bitexact",
+                        str(mp3_path)], check=True)
+        fin = ff_measure(mp3_path)  # measure the delivered MP3 itself
+        lufs, tp = float(fin["input_i"]), float(fin["input_tp"])
+        err = pp["target_lufs"] - lufs
+        if abs(err) <= pp["converge_lu"] and tp <= pp["true_peak_ceiling_dbtp"]:
+            break
+        gain += err
+    return {"integrated_lufs": round(lufs, 2), "true_peak_dbtp": round(tp, 2), "gain_db": round(gain, 2), "iterations": i + 1,
             "loudness_ok": abs(lufs - pp["target_lufs"]) <= pp["lufs_tolerance"] and tp <= pp["true_peak_ceiling_dbtp"]}
 
 def duration(path): return round(sf.info(str(path)).duration, 3)
@@ -113,7 +118,9 @@ class Synth:
         if self.fake:
             rng = np.random.default_rng(seed); n = int(self.sr * 0.33 * len(text.split()))
             t = np.arange(n) / self.sr
-            return (rng.standard_normal(n) * 0.2 * (0.5 + 0.5 * np.sin(2 * np.pi * 3.5 * t))).astype("float32")
+            y = rng.standard_normal(n) * 0.05 * (0.5 + 0.5 * np.sin(2 * np.pi * 3.5 * t))
+            y[:: int(self.sr * 0.7)] = 0.95  # peaky, like speech plosives
+            return y.astype("float32")
         import torch
         random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
         w = self.model.generate(text, audio_prompt_path=str(REF_PATH), **self.kw)
@@ -139,10 +146,13 @@ def qa_check(expected, transcript, dur, qa, loud):
     w = None if transcript is None else wer(expected, transcript)
     terms = [t for t in qa["key_terms"] if t in " ".join(norm(expected))]
     terms_heard = None if transcript is None else {t: (t in " ".join(norm(transcript))) for t in terms}
-    ok = (w is None or w <= qa["max_wer"]) and qa["words_per_second_min"] <= wps <= qa["words_per_second_max"] \
-         and loud["loudness_ok"] and (terms_heard is None or all(terms_heard.values()))
+    fails = []
+    if w is not None and w > qa["max_wer"]: fails.append("asr_mismatch")
+    if not (qa["words_per_second_min"] <= wps <= qa["words_per_second_max"]): fails.append("pace")
+    if terms_heard is not None and not all(terms_heard.values()): fails.append("key_term_not_heard")
+    if not loud["loudness_ok"]: fails.append("loudness")  # post-processing issue: re-synthesis cannot fix it
     return {"transcript": transcript, "wer": None if w is None else round(w, 3), "words_per_second": round(wps, 2),
-            "key_terms_heard": terms_heard, "passed": bool(ok)}
+            "key_terms_heard": terms_heard, "failures": fails, "passed": not fails}
 
 
 # ---------- main ----------
@@ -224,26 +234,29 @@ def main():
     pp, qa, base = cfg["postprocess"], cfg["qa"], cfg["settings"]["base_seed"]
 
     for c, sp, fp, reason in todo:
-        best = None; t_cue = time.time(); gen_t = 0
+        best = None; t_cue = time.time(); gen_t = 0; alog = []
         for attempt in range(qa["max_attempts"]):
             seed = base + attempt; t = time.time()
-            x = synth(sp, seed); gen_t += time.time() - t
+            x = synth(sp, seed); one = time.time() - t; gen_t += one
             mp3 = OUT / f"{c['id']}.mp3"; loud = encode(x, synth.sr, pp, mp3)
             d = duration(mp3); tr = asr(mp3); q = qa_check(sp, tr, d, qa, loud)
+            alog.append({"attempt": attempt + 1, "seed": seed, "raw_audio_s": round(len(x) / synth.sr, 2), "duration_s": d,
+                         "synth_s": round(one, 1), "wer": q["wer"], "words_per_second": q["words_per_second"],
+                         "lufs": loud["integrated_lufs"], "true_peak": loud["true_peak_dbtp"], "failures": q["failures"]})
             print(f"  {c['id']} attempt {attempt+1} seed {seed}: {d}s, WER {q['wer']}, {loud['integrated_lufs']} LUFS, "
-                  f"TP {loud['true_peak_dbtp']}, passed={q['passed']}", flush=True)
+                  f"TP {loud['true_peak_dbtp']}, failures={q['failures']}", flush=True)
             cand = {"seed_used": seed, "attempt": attempt + 1, "duration_s": d, **loud, "qa": q, "mp3_bytes": mp3.read_bytes()}
-            if best is None or (q["passed"] and not best["qa"]["passed"]) or \
-               (q["passed"] == best["qa"]["passed"] and (q["wer"] or 0) < (best["qa"]["wer"] or 0)): best = cand
-            if q["passed"]: break
+            nfail = len(q["failures"])
+            if best is None or nfail < len(best["qa"]["failures"]): best = cand
+            if not [f for f in q["failures"] if f != "loudness"]: break  # only retry what a new take can fix
         (OUT / f"{c['id']}.mp3").write_bytes(best.pop("mp3_bytes"))
         rv = review.get(c["id"]); status = rv["status"] if rv and rv["fingerprint"] == fp else "unreviewed"
         new_entries[c["id"]] = {
             "id": c["id"], "kind": c["kind"], "sync_event": c["sync_event"], "file": f"out/{c['id']}.mp3",
             "text_source": c["text"], "text_spoken": sp, "fingerprint": fp,
             "sha256": sha256_file(OUT / f"{c['id']}.mp3"), "duration_s": best["duration_s"],
-            "integrated_lufs": best["integrated_lufs"], "true_peak_dbtp": best["true_peak_dbtp"], "loudness_ok": best["loudness_ok"],
-            "qa": best["qa"], "qa_status": "passed" if best["qa"]["passed"] else "NEEDS_ATTENTION",
+            "integrated_lufs": best["integrated_lufs"], "true_peak_dbtp": best["true_peak_dbtp"], "gain_db": best["gain_db"], "loudness_ok": best["loudness_ok"],
+            "qa": best["qa"], "attempt_log": alog, "qa_status": "passed" if best["qa"]["passed"] else "NEEDS_ATTENTION",
             "review_status": status,
             "generation": {"model_hf_repo": cfg["model"]["hf_repo"], "model_revision": rev, "versions": versions,
                            "settings": {**{k: v for k, v in cfg["settings"].items() if k != "base_seed"},
