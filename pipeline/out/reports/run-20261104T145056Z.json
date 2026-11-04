@@ -1,0 +1,56 @@
+{
+  "started": "2026-11-04T14:46:10Z",
+  "timings_s": {
+    "reference_build_or_cache": 0.0,
+    "model_load": 22.3,
+    "demo_cycle_01_build": {
+      "audio_s": 5.862,
+      "synth_s": 74.2,
+      "realtime_factor": 12.7,
+      "attempts": 1
+    },
+    "demo_cycle_01_press": {
+      "audio_s": 4.441,
+      "synth_s": 50.7,
+      "realtime_factor": 11.4,
+      "attempts": 1
+    },
+    "demo_cycle_01_balance": {
+      "audio_s": 7.86,
+      "synth_s": 74.4,
+      "realtime_factor": 9.5,
+      "attempts": 1
+    },
+    "demo_cycle_01_recover": {
+      "audio_s": 5.44,
+      "synth_s": 57.1,
+      "realtime_factor": 10.5,
+      "attempts": 1
+    },
+    "total": 286.5
+  },
+  "host": {
+    "python": "3.12.15",
+    "cpu_count": 4,
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+  },
+  "regenerated": [
+    "demo_cycle_01_build",
+    "demo_cycle_01_press",
+    "demo_cycle_01_balance",
+    "demo_cycle_01_recover"
+  ],
+  "skipped": [
+    "demo_scene_01",
+    "demo_beat_01",
+    "demo_term_01",
+    "demo_term_02",
+    "demo_term_03",
+    "demo_feedback_a",
+    "demo_intro_long",
+    "demo_short_01",
+    "demo_feedback_b",
+    "demo_feedback_c"
+  ],
+  "failures": []
+}

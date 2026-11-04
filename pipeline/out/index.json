@@ -683,6 +683,270 @@
         "total_seconds": 56.0,
         "generated_at": "2026-11-04T14:02:20Z"
       }
+    },
+    {
+      "id": "demo_cycle_01_build",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:build",
+      "file": "out/demo_cycle_01_build.mp3",
+      "text_source": "Red move the ball out wide. Watch how Blue's midfield and defence move across together, keeping their shape.",
+      "text_spoken": "Red move the ball out wide. Watch how Blue's midfield and defence move across together, keeping their shape.",
+      "fingerprint": "f3a5c9cc440cabf0a5ca15f4b6b26897d3121ee3d485820fee5203bb545084c2",
+      "sha256": "e98cd73aa09707062c572ca7920cb9c14a93e690b8ee12b6ff5d568e4afc4a55",
+      "duration_s": 5.862,
+      "integrated_lufs": -16.19,
+      "true_peak_dbtp": -2.75,
+      "gain_db": 2.05,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "Red, move the ball out wide. Watch how Blue's midfield and defence move across together, keeping their shape.",
+        "wer": 0.0,
+        "words_per_second": 3.24,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 6.2,
+          "duration_s": 5.862,
+          "synth_s": 74.2,
+          "wer": 0.0,
+          "words_per_second": 3.24,
+          "lufs": -16.19,
+          "true_peak": -2.75,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 74.2,
+        "total_seconds": 75.9,
+        "generated_at": "2026-11-04T14:47:48Z"
+      }
+    },
+    {
+      "id": "demo_cycle_01_press",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:press",
+      "file": "out/demo_cycle_01_press.mp3",
+      "text_source": "The nearest midfielder closes down, while the full-back stays behind to provide cover.",
+      "text_spoken": "The nearest midfielder closes down, while the full-back stays behind to provide cover.",
+      "fingerprint": "1f8ec56df922661a94aed75b0c8569e013d8f7a08d56edab7a87ccaa8989bd25",
+      "sha256": "31fc15ebf40bf123d3fb4ac372b37799d5e4d93fba2303bafa3589618550031c",
+      "duration_s": 4.441,
+      "integrated_lufs": -16.17,
+      "true_peak_dbtp": -2.74,
+      "gain_db": 2.86,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "The nearest midfielder closes down while the full back stays behind to provide cover.",
+        "wer": 0.0,
+        "words_per_second": 3.15,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 4.8,
+          "duration_s": 4.441,
+          "synth_s": 50.7,
+          "wer": 0.0,
+          "words_per_second": 3.15,
+          "lufs": -16.17,
+          "true_peak": -2.74,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 50.7,
+        "total_seconds": 52.4,
+        "generated_at": "2026-11-04T14:48:40Z"
+      }
+    },
+    {
+      "id": "demo_cycle_01_balance",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:balance",
+      "file": "out/demo_cycle_01_balance.mp3",
+      "text_source": "On the other side, the winger tucks inside and the back four stay connected. That protects the spaces left by the press.",
+      "text_spoken": "On the other side, the winger tucks inside and the back four stay connected. That protects the spaces left by the press.",
+      "fingerprint": "1a4666a5ff853959410c0c17640fbab3c82d20b62e849df369e22df75459a4b1",
+      "sha256": "e2bc949e20c45b582cf49eacb88be0a44e876279b10c30c838d1e7c4dea931c9",
+      "duration_s": 7.86,
+      "integrated_lufs": -16.17,
+      "true_peak_dbtp": -2.62,
+      "gain_db": 2.61,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "On the other side, the winger tucks inside, and the back four stay connected. That protects the spaces left by the press.",
+        "wer": 0.0,
+        "words_per_second": 2.8,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 8.28,
+          "duration_s": 7.86,
+          "synth_s": 74.4,
+          "wer": 0.0,
+          "words_per_second": 2.8,
+          "lufs": -16.17,
+          "true_peak": -2.62,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 74.4,
+        "total_seconds": 76.5,
+        "generated_at": "2026-11-04T14:49:57Z"
+      }
+    },
+    {
+      "id": "demo_cycle_01_recover",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:recover",
+      "file": "out/demo_cycle_01_recover.mp3",
+      "text_source": "Red play backwards, so Blue ease off the pressure and settle back into their four-five-one shape.",
+      "text_spoken": "Red play backwards, so Blue ease off the pressure and settle back into their four-five-one shape.",
+      "fingerprint": "e83fe9bf87351ca70d8303eb66b35ad37d4544b758a81c6720a47e7fb137ef50",
+      "sha256": "cc10491abe5cd1dee612103b04f8bc2da5e50cdf1f76321f4885537c36ce68de",
+      "duration_s": 5.44,
+      "integrated_lufs": -16.16,
+      "true_peak_dbtp": -2.67,
+      "gain_db": 4.12,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "Red play backwards, so blue ease off the pressure and settle back into their 451 shape.",
+        "wer": 0.0,
+        "words_per_second": 3.31,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 5.84,
+          "duration_s": 5.44,
+          "synth_s": 57.1,
+          "wer": 0.0,
+          "words_per_second": 3.31,
+          "lufs": -16.16,
+          "true_peak": -2.67,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 57.1,
+        "total_seconds": 59.2,
+        "generated_at": "2026-11-04T14:50:56Z"
+      }
     }
   ]
 }
