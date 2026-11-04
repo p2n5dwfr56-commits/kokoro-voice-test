@@ -1,17 +1,65 @@
 {
   "title": "Generic pipeline test cues (no lesson content)",
   "cues": [
-    {"id": "demo_scene_01", "kind": "scene", "sync_event": "scene:D1",
-     "text": "Welcome to the narration test. This voice should sound relaxed and natural, like a friend talking you through a match."},
-    {"id": "demo_beat_01", "kind": "movement_beat", "sync_event": "cycle:1:build",
-     "text": "A formation is only a starting point. Once the game kicks off, the shape keeps changing."},
-    {"id": "demo_term_01", "kind": "scene", "sync_event": "scene:D2",
-     "text": "Plenty of teams line up in a 4-2-3-1, with two holding midfielders sitting in front of the back four."},
-    {"id": "demo_term_02", "kind": "scene", "sync_event": "scene:D3",
-     "text": "A false nine drops deep from the front line, while a double pivot shields the defence."},
-    {"id": "demo_term_03", "kind": "scene", "sync_event": "scene:D4",
-     "text": "The high press is about winning the ball back quickly, high up the pitch, before the other team can settle."},
-    {"id": "demo_feedback_a", "kind": "answer_feedback", "sync_event": "answer_feedback:D-Q1:A",
-     "text": "Good choice. That keeps the team compact and leaves very little space between the lines."}
+    {
+      "id": "demo_scene_01",
+      "kind": "scene",
+      "sync_event": "scene:D1",
+      "text": "Welcome to the narration test. This voice should sound relaxed and natural, like a friend talking you through a match."
+    },
+    {
+      "id": "demo_beat_01",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:build",
+      "text": "A formation is only a starting point. Once the game kicks off, the shape keeps changing."
+    },
+    {
+      "id": "demo_term_01",
+      "kind": "scene",
+      "sync_event": "scene:D2",
+      "text": "Plenty of teams line up in a 4-2-3-1, with two holding midfielders sitting in front of the back four."
+    },
+    {
+      "id": "demo_term_02",
+      "kind": "scene",
+      "sync_event": "scene:D3",
+      "text": "A false nine drops deep from the front line, while a double pivot shields the defence."
+    },
+    {
+      "id": "demo_term_03",
+      "kind": "scene",
+      "sync_event": "scene:D4",
+      "text": "The high press is about winning the ball back quickly, high up the pitch, before the other team can settle."
+    },
+    {
+      "id": "demo_feedback_a",
+      "kind": "answer_feedback",
+      "sync_event": "answer_feedback:D-Q1:A",
+      "text": "Good choice. That keeps the team compact and leaves very little space between the lines."
+    },
+    {
+      "id": "demo_intro_long",
+      "kind": "scene",
+      "sync_event": "scene:D0",
+      "text": "Welcome to the audio test. The clips you hear are placeholders, so the words will not describe the movement on screen. The point is to check timing, pausing and captions."
+    },
+    {
+      "id": "demo_short_01",
+      "kind": "movement_beat",
+      "sync_event": "cycle:0:short",
+      "text": "Watch the shape closely."
+    },
+    {
+      "id": "demo_feedback_b",
+      "kind": "answer_feedback",
+      "sync_event": "answer_feedback:D-Q1:B",
+      "text": "Not quite. Have another look at how the nearby players move to help each other."
+    },
+    {
+      "id": "demo_feedback_c",
+      "kind": "answer_feedback",
+      "sync_event": "answer_feedback:D-Q1:C",
+      "text": "That is a common instinct, but it leaves gaps. Watch the next sequence and see where the space opens up."
+    }
   ]
 }
