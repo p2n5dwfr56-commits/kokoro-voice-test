@@ -10,7 +10,7 @@
     {"id": "demo_term_02", "kind": "scene", "sync_event": "scene:D3",
      "text": "A false nine drops deep from the front line, while a double pivot shields the defence."},
     {"id": "demo_term_03", "kind": "scene", "sync_event": "scene:D4",
-     "text": "The high press is about winning the ball back quickly, high up the pitch."},
+     "text": "The high press is about winning the ball back quickly, high up the pitch, before the other team can settle."},
     {"id": "demo_feedback_a", "kind": "answer_feedback", "sync_event": "answer_feedback:D-Q1:A",
      "text": "Good choice. That keeps the team compact and leaves very little space between the lines."}
   ]

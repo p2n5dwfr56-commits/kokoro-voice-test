@@ -299,6 +299,7 @@ def main():
                    "failures": [e["id"] for e in final if e["qa_status"] != "passed"]})
     report["timings_s"]["total"] = round(time.time() - t_start, 1)
     save(OUT / "run-report.json", report)
+    save(OUT / "reports" / f"run-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}.json", report)  # history
     print(json.dumps({k: report[k] for k in ("regenerated", "skipped", "failures")}), "total", report["timings_s"]["total"], "s")
 
 if __name__ == "__main__":
