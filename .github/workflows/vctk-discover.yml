@@ -1,0 +1,16 @@
+name: vctk-discover
+on:
+  workflow_dispatch:
+  push:
+    paths: ['vctk_discover.py', '.github/workflows/vctk-discover.yml']
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install huggingface_hub && python vctk_discover.py
+      - run: curl -sSI -r 0-99 https://datashare.ed.ac.uk/bitstream/handle/10283/3443/VCTK-Corpus-0.92.zip | head -15
+        continue-on-error: true
