@@ -1,0 +1,70 @@
+{
+  "started": "2026-11-04T12:28:05Z",
+  "timings_s": {
+    "reference_build_or_cache": 117.1,
+    "model_load": 59.5,
+    "demo_scene_01": {
+      "audio_s": 6.916,
+      "synth_s": 76.3,
+      "realtime_factor": 11.0,
+      "attempts": 1
+    },
+    "demo_beat_01": {
+      "audio_s": 6.279,
+      "synth_s": 172.2,
+      "realtime_factor": 27.4,
+      "attempts": 3
+    },
+    "demo_term_01": {
+      "audio_s": 5.269,
+      "synth_s": 173.0,
+      "realtime_factor": 32.8,
+      "attempts": 1
+    },
+    "demo_term_02": {
+      "audio_s": 4.818,
+      "synth_s": 54.7,
+      "realtime_factor": 11.4,
+      "attempts": 1
+    },
+    "demo_term_03": {
+      "audio_s": 4.038,
+      "synth_s": 137.1,
+      "realtime_factor": 34.0,
+      "attempts": 1
+    },
+    "demo_feedback_a": {
+      "audio_s": 4.722,
+      "synth_s": 52.7,
+      "realtime_factor": 11.2,
+      "attempts": 1
+    },
+    "total": 1002.2
+  },
+  "host": {
+    "python": "3.12.15",
+    "cpu_count": 4,
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+  },
+  "determinism_check": {
+    "cue": "demo_term_03",
+    "same_seed_waveform_identical": true,
+    "same_seed_max_abs_diff": 0.0,
+    "same_seed_same_length": true,
+    "same_seed_mp3_identical": true,
+    "different_seed_waveform_identical": false
+  },
+  "regenerated": [
+    "demo_scene_01",
+    "demo_beat_01",
+    "demo_term_01",
+    "demo_term_02",
+    "demo_term_03",
+    "demo_feedback_a"
+  ],
+  "skipped": [],
+  "failures": [
+    "demo_term_01",
+    "demo_term_03"
+  ]
+}
