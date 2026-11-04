@@ -1,0 +1,55 @@
+name: audio-pipeline
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: generate (regenerate changed cues) or plan (report only)
+        type: choice
+        options: [generate, plan]
+        default: generate
+      determinism:
+        description: also run the repeat-synthesis determinism check
+        type: boolean
+        default: false
+      plan_override:
+        description: "optional what-if plan, e.g. settings.exaggeration=0.7"
+        default: ""
+permissions:
+  contents: write
+concurrency: audio-pipeline
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: ffmpeg -version | head -1 || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - uses: actions/cache@v4
+        with: { path: ~/.cache/huggingface, key: hf-models-v1 }
+      - uses: actions/cache@v4
+        with: { path: ref, key: "ref-p286-v1-${{ hashFiles('pipeline/build_reference.py') }}" }
+      - name: Install (timed)
+        run: |
+          s=$(date +%s)
+          python -m pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -q -r pipeline/requirements.txt
+          echo "install_seconds=$(( $(date +%s) - s ))" | tee -a $GITHUB_STEP_SUMMARY
+      - name: Plan
+        run: python pipeline/generate.py --plan
+      - name: What-if plan
+        if: inputs.plan_override != ''
+        run: python pipeline/generate.py --plan --override "${{ inputs.plan_override }}"
+      - name: Generate changed cues
+        if: inputs.mode == 'generate'
+        run: python pipeline/generate.py ${{ inputs.determinism && '--determinism-check' || '' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "pipeline-out-run${{ github.run_number }}", path: pipeline/out, retention-days: 7, if-no-files-found: warn }
+      - name: Commit pipeline state and outputs
+        if: inputs.mode == 'generate'
+        run: |
+          git config user.name "audio-pipeline"; git config user.email "audio-pipeline@users.noreply.github.com"
+          git add pipeline/out pipeline/state
+          git diff --cached --quiet || { git commit -qm "pipeline: update generated cues and state"; git pull -q --rebase origin main; git push -q origin HEAD:main; }

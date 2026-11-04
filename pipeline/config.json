@@ -1,0 +1,44 @@
+{
+  "pipeline_version": "0.1.0-poc",
+  "model": {
+    "hf_repo": "ResembleAI/chatterbox",
+    "hf_revision": null,
+    "note": "null = use pipeline/state/model_revision.txt (written on the first run, then pinned)"
+  },
+  "settings": {
+    "exaggeration": 0.6,
+    "cfg_weight": 0.5,
+    "temperature": 0.8,
+    "repetition_penalty": 1.2,
+    "min_p": 0.05,
+    "top_p": 1.0,
+    "base_seed": 20261104,
+    "torch_threads": 4
+  },
+  "reference": {
+    "source": "CSTR-Edinburgh/vctk (parquet), speaker p286, male, labelled Newcastle, CC BY 4.0",
+    "speaker": "p286",
+    "min_seconds": 10,
+    "internal_testing_only": true
+  },
+  "postprocess": {
+    "trim_threshold_db": -50,
+    "pad_ms": 80,
+    "target_lufs": -16.0,
+    "true_peak_target_dbtp": -1.8,
+    "true_peak_ceiling_dbtp": -1.5,
+    "lufs_tolerance": 1.0,
+    "lra": 11,
+    "sample_rate": 44100,
+    "channels": 1,
+    "mp3_bitrate": "96k"
+  },
+  "qa": {
+    "asr_model": "base.en",
+    "max_wer": 0.15,
+    "words_per_second_min": 1.8,
+    "words_per_second_max": 4.2,
+    "max_attempts": 3,
+    "key_terms": ["false nine", "double pivot", "high press", "four two three one"]
+  }
+}

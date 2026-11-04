@@ -1,0 +1,7 @@
+# torch==2.6.0 / torchaudio==2.6.0 are installed first from the CPU wheel index (see workflow)
+chatterbox-tts==0.1.7
+faster-whisper==1.2.1
+soundfile
+pyarrow==17.0.0
+pandas==2.2.3
+huggingface_hub

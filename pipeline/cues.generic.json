@@ -1,0 +1,17 @@
+{
+  "title": "Generic pipeline test cues (no lesson content)",
+  "cues": [
+    {"id": "demo_scene_01", "kind": "scene", "sync_event": "scene:D1",
+     "text": "Welcome to the narration test. This voice should sound relaxed and natural, like a friend talking you through a match."},
+    {"id": "demo_beat_01", "kind": "movement_beat", "sync_event": "cycle:1:build",
+     "text": "A formation is only a starting point. Once the game kicks off, the shape keeps changing."},
+    {"id": "demo_term_01", "kind": "scene", "sync_event": "scene:D2",
+     "text": "Plenty of teams line up in a 4-2-3-1, with two holding midfielders sitting in front of the back four."},
+    {"id": "demo_term_02", "kind": "scene", "sync_event": "scene:D3",
+     "text": "A false nine drops deep from the front line, while a double pivot shields the defence."},
+    {"id": "demo_term_03", "kind": "scene", "sync_event": "scene:D4",
+     "text": "The high press is about winning the ball back quickly, high up the pitch."},
+    {"id": "demo_feedback_a", "kind": "answer_feedback", "sync_event": "answer_feedback:D-Q1:A",
+     "text": "Good choice. That keeps the team compact and leaves very little space between the lines."}
+  ]
+}

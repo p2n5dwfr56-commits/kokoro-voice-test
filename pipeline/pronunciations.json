@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "substitutions": [
+    {"pattern": "\\b4-2-3-1\\b", "say": "four-two-three-one"},
+    {"pattern": "\\b4-5-1\\b", "say": "four-five-one"},
+    {"pattern": "\\b4-4-2\\b", "say": "four-four-two"},
+    {"pattern": "\\b4-3-3\\b", "say": "four-three-three"},
+    {"pattern": "\\bxG\\b", "say": "expected goals"}
+  ]
+}
