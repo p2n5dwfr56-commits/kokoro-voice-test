@@ -277,19 +277,19 @@
       "kind": "scene",
       "sync_event": "scene:D4",
       "file": "out/demo_term_03.mp3",
-      "text_source": "The high press is about winning the ball back quickly, high up the pitch.",
-      "text_spoken": "The high press is about winning the ball back quickly, high up the pitch.",
-      "fingerprint": "7ffabffcbfb8ee531469d600d94dd4d04e6d2f0c4c0c0a7acaa13b7c2a2ad407",
-      "sha256": "c745cdd63a3e89086d23ccc73796d7e11839f34fbff8c6c8718cff0c08307657",
-      "duration_s": 4.038,
-      "integrated_lufs": -16.17,
-      "true_peak_dbtp": -2.74,
-      "gain_db": 4.72,
+      "text_source": "The high press is about winning the ball back quickly, high up the pitch, before the other team can settle.",
+      "text_spoken": "The high press is about winning the ball back quickly, high up the pitch, before the other team can settle.",
+      "fingerprint": "8ad4e57d578fab49339fc17c2fe2eafedaccaaa18e8667efc92341b481a81d9e",
+      "sha256": "ef58e95d1f09a09d02740588c281de100d3133acd6483a79c82f5b5214b3b7a7",
+      "duration_s": 4.804,
+      "integrated_lufs": -16.23,
+      "true_peak_dbtp": -2.69,
+      "gain_db": 4.17,
       "loudness_ok": true,
       "qa": {
-        "transcript": "The high press is about winning the ball back quickly, high up the pitch.",
+        "transcript": "The high press is about winning the ball back quickly, high up the pitch before the other team can settle.",
         "wer": 0.0,
-        "words_per_second": 3.47,
+        "words_per_second": 4.16,
         "key_terms_heard": {
           "high press": true
         },
@@ -300,13 +300,27 @@
         {
           "attempt": 1,
           "seed": 20261104,
-          "raw_audio_s": 4.16,
-          "duration_s": 4.038,
-          "synth_s": 43.9,
+          "raw_audio_s": 5.2,
+          "duration_s": 4.758,
+          "synth_s": 49.3,
           "wer": 0.0,
-          "words_per_second": 3.47,
-          "lufs": -16.17,
-          "true_peak": -2.74,
+          "words_per_second": 4.2,
+          "lufs": -16.14,
+          "true_peak": -2.7,
+          "failures": [
+            "pace"
+          ]
+        },
+        {
+          "attempt": 2,
+          "seed": 20261105,
+          "raw_audio_s": 5.16,
+          "duration_s": 4.804,
+          "synth_s": 39.5,
+          "wer": 0.0,
+          "words_per_second": 4.16,
+          "lufs": -16.23,
+          "true_peak": -2.69,
           "failures": []
         }
       ],
@@ -330,14 +344,14 @@
           "top_p": 1.0,
           "torch_threads": 4,
           "base_seed": 20261104,
-          "seed_used": 20261104,
-          "attempts": 1
+          "seed_used": 20261105,
+          "attempts": 2
         },
         "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
         "pronunciation_version": 1,
-        "generation_seconds": 43.9,
-        "total_seconds": 45.5,
-        "generated_at": "2026-11-04T13:00:34Z"
+        "generation_seconds": 88.8,
+        "total_seconds": 91.0,
+        "generated_at": "2026-11-04T13:15:51Z"
       }
     },
     {

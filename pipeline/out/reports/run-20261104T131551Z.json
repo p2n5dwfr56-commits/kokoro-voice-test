@@ -1,0 +1,30 @@
+{
+  "started": "2026-11-04T13:14:05Z",
+  "timings_s": {
+    "reference_build_or_cache": 0.0,
+    "model_load": 15.1,
+    "demo_term_03": {
+      "audio_s": 4.804,
+      "synth_s": 88.8,
+      "realtime_factor": 18.5,
+      "attempts": 2
+    },
+    "total": 106.2
+  },
+  "host": {
+    "python": "3.12.15",
+    "cpu_count": 4,
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+  },
+  "regenerated": [
+    "demo_term_03"
+  ],
+  "skipped": [
+    "demo_scene_01",
+    "demo_beat_01",
+    "demo_term_01",
+    "demo_term_02",
+    "demo_feedback_a"
+  ],
+  "failures": []
+}
