@@ -128,7 +128,9 @@ class ASR:
             self.m = WhisperModel(qa["asr_model"], device="cpu", compute_type="int8")
     def __call__(self, path):
         if not self.on: return None
-        segs, _ = self.m.transcribe(str(path), language="en", beam_size=5)
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(path), "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
+                             capture_output=True, check=True).stdout  # decode with ffmpeg (avoids faster-whisper's PyAV path)
+        segs, _ = self.m.transcribe(np.frombuffer(raw, dtype="float32"), language="en", beam_size=5)
         return " ".join(s.text.strip() for s in segs)
 
 
