@@ -1,58 +1,50 @@
 {
-  "started": "2026-11-04T12:28:05Z",
+  "started": "2026-11-04T12:55:28Z",
   "timings_s": {
-    "reference_build_or_cache": 117.1,
-    "model_load": 59.5,
+    "reference_build_or_cache": 0.0,
+    "model_load": 19.3,
     "demo_scene_01": {
       "audio_s": 6.916,
-      "synth_s": 76.3,
-      "realtime_factor": 11.0,
+      "synth_s": 74.8,
+      "realtime_factor": 10.8,
       "attempts": 1
     },
     "demo_beat_01": {
-      "audio_s": 6.279,
-      "synth_s": 172.2,
-      "realtime_factor": 27.4,
-      "attempts": 3
+      "audio_s": 5.165,
+      "synth_s": 52.6,
+      "realtime_factor": 10.2,
+      "attempts": 1
     },
     "demo_term_01": {
       "audio_s": 5.269,
-      "synth_s": 173.0,
-      "realtime_factor": 32.8,
+      "synth_s": 53.9,
+      "realtime_factor": 10.2,
       "attempts": 1
     },
     "demo_term_02": {
       "audio_s": 4.818,
-      "synth_s": 54.7,
-      "realtime_factor": 11.4,
+      "synth_s": 52.5,
+      "realtime_factor": 10.9,
       "attempts": 1
     },
     "demo_term_03": {
       "audio_s": 4.038,
-      "synth_s": 137.1,
-      "realtime_factor": 34.0,
+      "synth_s": 43.9,
+      "realtime_factor": 10.9,
       "attempts": 1
     },
     "demo_feedback_a": {
       "audio_s": 4.722,
-      "synth_s": 52.7,
-      "realtime_factor": 11.2,
+      "synth_s": 49.3,
+      "realtime_factor": 10.4,
       "attempts": 1
     },
-    "total": 1002.2
+    "total": 356.5
   },
   "host": {
-    "python": "3.12.15",
+    "python": "3.12.16",
     "cpu_count": 4,
     "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
-  },
-  "determinism_check": {
-    "cue": "demo_term_03",
-    "same_seed_waveform_identical": true,
-    "same_seed_max_abs_diff": 0.0,
-    "same_seed_same_length": true,
-    "same_seed_mp3_identical": true,
-    "different_seed_waveform_identical": false
   },
   "regenerated": [
     "demo_scene_01",
@@ -63,8 +55,5 @@
     "demo_feedback_a"
   ],
   "skipped": [],
-  "failures": [
-    "demo_term_01",
-    "demo_term_03"
-  ]
+  "failures": []
 }

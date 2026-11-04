@@ -1,5 +1,5 @@
 {
-  "pipeline_version": "0.1.0-poc",
+  "pipeline_version": "0.1.1-poc",
   "manifest": "cues.generic.json",
   "internal_testing_only": true,
   "cues": [
@@ -10,19 +10,35 @@
       "file": "out/demo_scene_01.mp3",
       "text_source": "Welcome to the narration test. This voice should sound relaxed and natural, like a friend talking you through a match.",
       "text_spoken": "Welcome to the narration test. This voice should sound relaxed and natural, like a friend talking you through a match.",
-      "fingerprint": "5e9bcefd20e90066b0b1a0c3cb775d3919a9a4561e088ee46f5eecc1bd87c5e7",
-      "sha256": "1adadb34074f60e85b91d0f0fc38915e23e3904559dbc1dbc5207a0d0ce0704e",
+      "fingerprint": "4bf7af3f1750c61638ce82d665ea03f022fc679d6f972aec54e994e688487902",
+      "sha256": "047e9cf41ecc434531534229d18563d152fa94eb8a931c9fc218c578264590b7",
       "duration_s": 6.916,
-      "integrated_lufs": -16.98,
-      "true_peak_dbtp": -2.14,
+      "integrated_lufs": -16.13,
+      "true_peak_dbtp": -2.72,
+      "gain_db": 2.36,
       "loudness_ok": true,
       "qa": {
         "transcript": "Welcome to the narration test. This voice should sound relaxed and natural like a friend talking you through a match.",
         "wer": 0.0,
         "words_per_second": 2.89,
         "key_terms_heard": {},
+        "failures": [],
         "passed": true
       },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 7.08,
+          "duration_s": 6.916,
+          "synth_s": 74.8,
+          "wer": 0.0,
+          "words_per_second": 2.89,
+          "lufs": -16.13,
+          "true_peak": -2.72,
+          "failures": []
+        }
+      ],
       "qa_status": "passed",
       "review_status": "unreviewed",
       "generation": {
@@ -48,9 +64,9 @@
         },
         "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
         "pronunciation_version": 1,
-        "generation_seconds": 76.3,
-        "total_seconds": 77.9,
-        "generated_at": "2026-11-04T12:32:19Z"
+        "generation_seconds": 74.8,
+        "total_seconds": 76.8,
+        "generated_at": "2026-11-04T12:57:04Z"
       }
     },
     {
@@ -60,19 +76,35 @@
       "file": "out/demo_beat_01.mp3",
       "text_source": "A formation is only a starting point. Once the game kicks off, the shape keeps changing.",
       "text_spoken": "A formation is only a starting point. Once the game kicks off, the shape keeps changing.",
-      "fingerprint": "5cfd14d4ff1097bac5eaeb81a8b5e2ae53216daaa92c6a44f9da2ee5e3ed702f",
-      "sha256": "4e6c171c3904f0d9fa0ce2ae111e8da1205392f7ea0d443e19fe2187a90fcbe2",
-      "duration_s": 6.279,
-      "integrated_lufs": -17.0,
-      "true_peak_dbtp": -2.17,
+      "fingerprint": "d135dbc6455c17addce3677ab4bbcf765982151e3b397913337ce5812d96a7b0",
+      "sha256": "bb452ab0dff24395eaa4534041c191df2fab35a658af590dfdae7ee704a78d0b",
+      "duration_s": 5.165,
+      "integrated_lufs": -16.16,
+      "true_peak_dbtp": -2.78,
+      "gain_db": 2.71,
       "loudness_ok": true,
       "qa": {
-        "transcript": "A formation is only a starting point, once the game kicks off the shape keeps changing.",
+        "transcript": "A formation is only a starting point. Once the game kicks off, the shape keeps changing.",
         "wer": 0.0,
-        "words_per_second": 2.55,
+        "words_per_second": 3.1,
         "key_terms_heard": {},
+        "failures": [],
         "passed": true
       },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 5.48,
+          "duration_s": 5.165,
+          "synth_s": 52.6,
+          "wer": 0.0,
+          "words_per_second": 3.1,
+          "lufs": -16.16,
+          "true_peak": -2.78,
+          "failures": []
+        }
+      ],
       "qa_status": "passed",
       "review_status": "unreviewed",
       "generation": {
@@ -93,14 +125,14 @@
           "top_p": 1.0,
           "torch_threads": 4,
           "base_seed": 20261104,
-          "seed_used": 20261106,
-          "attempts": 3
+          "seed_used": 20261104,
+          "attempts": 1
         },
         "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
         "pronunciation_version": 1,
-        "generation_seconds": 172.2,
-        "total_seconds": 176.5,
-        "generated_at": "2026-11-04T12:35:16Z"
+        "generation_seconds": 52.6,
+        "total_seconds": 54.3,
+        "generated_at": "2026-11-04T12:57:59Z"
       }
     },
     {
@@ -110,22 +142,38 @@
       "file": "out/demo_term_01.mp3",
       "text_source": "Plenty of teams line up in a 4-2-3-1, with two holding midfielders sitting in front of the back four.",
       "text_spoken": "Plenty of teams line up in a four-two-three-one, with two holding midfielders sitting in front of the back four.",
-      "fingerprint": "5cadb5b18fe5ac1584828eb67d26c3e144ba147d42346ae5c8e809967d600f2d",
-      "sha256": "10c99eb023a2bee8d7260661162e7fae858cb9892e1400c5e2ebd30a252f8844",
+      "fingerprint": "f37ef384ab67a02ef23f3630b51a311ef2dc2f9627568efda1e3abc849f8f87b",
+      "sha256": "435d1f5a21c89e7ee087331a744c1e1668c7be844b23229c643a2abd141e6a45",
       "duration_s": 5.269,
-      "integrated_lufs": -17.08,
-      "true_peak_dbtp": -2.18,
-      "loudness_ok": false,
+      "integrated_lufs": -16.21,
+      "true_peak_dbtp": -2.77,
+      "gain_db": 3.73,
+      "loudness_ok": true,
       "qa": {
-        "transcript": "Plenty of teams line up in a 4-2-3-1, with two holding midfielders sitting in front of the back four.",
+        "transcript": "Plenty of teams line up in a 4-2-3-1 with two holding midfielders sitting in front of the back four.",
         "wer": 0.0,
         "words_per_second": 4.18,
         "key_terms_heard": {
           "four two three one": true
         },
-        "passed": false
+        "failures": [],
+        "passed": true
       },
-      "qa_status": "NEEDS_ATTENTION",
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 5.84,
+          "duration_s": 5.269,
+          "synth_s": 53.9,
+          "wer": 0.0,
+          "words_per_second": 4.18,
+          "lufs": -16.21,
+          "true_peak": -2.77,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
       "review_status": "unreviewed",
       "generation": {
         "model_hf_repo": "ResembleAI/chatterbox",
@@ -150,9 +198,9 @@
         },
         "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
         "pronunciation_version": 1,
-        "generation_seconds": 173.0,
-        "total_seconds": 178.4,
-        "generated_at": "2026-11-04T12:38:14Z"
+        "generation_seconds": 53.9,
+        "total_seconds": 55.6,
+        "generated_at": "2026-11-04T12:58:54Z"
       }
     },
     {
@@ -162,22 +210,38 @@
       "file": "out/demo_term_02.mp3",
       "text_source": "A false nine drops deep from the front line, while a double pivot shields the defence.",
       "text_spoken": "A false nine drops deep from the front line, while a double pivot shields the defence.",
-      "fingerprint": "8a67f709bde7493253fc94949a5dc0414b1959a23f1e6aaac080bc7eb5ab2cd7",
-      "sha256": "37a88e7a5b99ab0d20ddcdc82ec9fa2f325a12fa61ff9ee514ad3cee3e60a238",
+      "fingerprint": "def705cbdf6c17b3a73db44182ead7eca32c4e23780e9a0892a72a9da2dc7f0f",
+      "sha256": "d8ed5841827cf19545e170a6a99019f6cc72eecd2ce49a707ba13fbc903f1d84",
       "duration_s": 4.818,
-      "integrated_lufs": -16.91,
-      "true_peak_dbtp": -2.21,
+      "integrated_lufs": -16.22,
+      "true_peak_dbtp": -2.76,
+      "gain_db": 2.84,
       "loudness_ok": true,
       "qa": {
-        "transcript": "A false nine drops deep from the front line, while a double pivot shields the defence.",
+        "transcript": "A false nine drops deep from the front line while a double pivot shields the defence.",
         "wer": 0.0,
         "words_per_second": 3.32,
         "key_terms_heard": {
           "false nine": true,
           "double pivot": true
         },
+        "failures": [],
         "passed": true
       },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 5.28,
+          "duration_s": 4.818,
+          "synth_s": 52.5,
+          "wer": 0.0,
+          "words_per_second": 3.32,
+          "lufs": -16.22,
+          "true_peak": -2.76,
+          "failures": []
+        }
+      ],
       "qa_status": "passed",
       "review_status": "unreviewed",
       "generation": {
@@ -203,9 +267,9 @@
         },
         "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
         "pronunciation_version": 1,
-        "generation_seconds": 54.7,
-        "total_seconds": 56.1,
-        "generated_at": "2026-11-04T12:39:10Z"
+        "generation_seconds": 52.5,
+        "total_seconds": 53.9,
+        "generated_at": "2026-11-04T12:59:48Z"
       }
     },
     {
@@ -215,12 +279,13 @@
       "file": "out/demo_term_03.mp3",
       "text_source": "The high press is about winning the ball back quickly, high up the pitch.",
       "text_spoken": "The high press is about winning the ball back quickly, high up the pitch.",
-      "fingerprint": "4f56bd8ab5cd5c7709c4552581c3ab80144a6b63f7f60d7640c833cb76f341a7",
-      "sha256": "d62dd30cac835f16c750284aaf78350237155add461ba5b10a3f95ff147e4063",
+      "fingerprint": "7ffabffcbfb8ee531469d600d94dd4d04e6d2f0c4c0c0a7acaa13b7c2a2ad407",
+      "sha256": "c745cdd63a3e89086d23ccc73796d7e11839f34fbff8c6c8718cff0c08307657",
       "duration_s": 4.038,
-      "integrated_lufs": -17.22,
-      "true_peak_dbtp": -2.19,
-      "loudness_ok": false,
+      "integrated_lufs": -16.17,
+      "true_peak_dbtp": -2.74,
+      "gain_db": 4.72,
+      "loudness_ok": true,
       "qa": {
         "transcript": "The high press is about winning the ball back quickly, high up the pitch.",
         "wer": 0.0,
@@ -228,58 +293,23 @@
         "key_terms_heard": {
           "high press": true
         },
-        "passed": false
-      },
-      "qa_status": "NEEDS_ATTENTION",
-      "review_status": "unreviewed",
-      "generation": {
-        "model_hf_repo": "ResembleAI/chatterbox",
-        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
-        "versions": {
-          "chatterbox-tts": "0.1.7",
-          "torch": "2.6.0+cpu",
-          "numpy": "1.26.4",
-          "ffmpeg": "6.1.1-3ubuntu5"
-        },
-        "settings": {
-          "exaggeration": 0.6,
-          "cfg_weight": 0.5,
-          "temperature": 0.8,
-          "repetition_penalty": 1.2,
-          "min_p": 0.05,
-          "top_p": 1.0,
-          "torch_threads": 4,
-          "base_seed": 20261104,
-          "seed_used": 20261104,
-          "attempts": 1
-        },
-        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
-        "pronunciation_version": 1,
-        "generation_seconds": 137.1,
-        "total_seconds": 141.1,
-        "generated_at": "2026-11-04T12:41:32Z"
-      }
-    },
-    {
-      "id": "demo_feedback_a",
-      "kind": "answer_feedback",
-      "sync_event": "answer_feedback:D-Q1:A",
-      "file": "out/demo_feedback_a.mp3",
-      "text_source": "Good choice. That keeps the team compact and leaves very little space between the lines.",
-      "text_spoken": "Good choice. That keeps the team compact and leaves very little space between the lines.",
-      "fingerprint": "3d8b280b11e1ac8482f73f434b6db9431af0dc7fc3502fcce30e5460f711d14b",
-      "sha256": "560161318a7b2b38a1c8f301fa08a0e4bec966a3cf0ec62702d64f957660b6be",
-      "duration_s": 4.722,
-      "integrated_lufs": -16.24,
-      "true_peak_dbtp": -2.08,
-      "loudness_ok": true,
-      "qa": {
-        "transcript": "Good choice. That keeps the team compact and leaves very little space between the lines.",
-        "wer": 0.0,
-        "words_per_second": 3.18,
-        "key_terms_heard": {},
+        "failures": [],
         "passed": true
       },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 4.16,
+          "duration_s": 4.038,
+          "synth_s": 43.9,
+          "wer": 0.0,
+          "words_per_second": 3.47,
+          "lufs": -16.17,
+          "true_peak": -2.74,
+          "failures": []
+        }
+      ],
       "qa_status": "passed",
       "review_status": "unreviewed",
       "generation": {
@@ -305,9 +335,75 @@
         },
         "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
         "pronunciation_version": 1,
-        "generation_seconds": 52.7,
-        "total_seconds": 54.1,
-        "generated_at": "2026-11-04T12:42:26Z"
+        "generation_seconds": 43.9,
+        "total_seconds": 45.5,
+        "generated_at": "2026-11-04T13:00:34Z"
+      }
+    },
+    {
+      "id": "demo_feedback_a",
+      "kind": "answer_feedback",
+      "sync_event": "answer_feedback:D-Q1:A",
+      "file": "out/demo_feedback_a.mp3",
+      "text_source": "Good choice. That keeps the team compact and leaves very little space between the lines.",
+      "text_spoken": "Good choice. That keeps the team compact and leaves very little space between the lines.",
+      "fingerprint": "d36470ac46007168de474df6484083feeb1796954d4a7cfd285c3e3d81c1b5d0",
+      "sha256": "dc9307e7491d2c88fdc1f2b646042f0507d866a080667e4a5653793cb2426c02",
+      "duration_s": 4.722,
+      "integrated_lufs": -16.17,
+      "true_peak_dbtp": -2.69,
+      "gain_db": 2.59,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "Good choice. That keeps the team compact and leaves very little space between the lines.",
+        "wer": 0.0,
+        "words_per_second": 3.18,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 5.0,
+          "duration_s": 4.722,
+          "synth_s": 49.3,
+          "wer": 0.0,
+          "words_per_second": 3.18,
+          "lufs": -16.17,
+          "true_peak": -2.69,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 49.3,
+        "total_seconds": 50.9,
+        "generated_at": "2026-11-04T13:01:25Z"
       }
     }
   ]
