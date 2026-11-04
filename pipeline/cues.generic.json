@@ -60,6 +60,30 @@
       "kind": "answer_feedback",
       "sync_event": "answer_feedback:D-Q1:C",
       "text": "That is a common instinct, but it leaves gaps. Watch the next sequence and see where the space opens up."
+    },
+    {
+      "id": "demo_cycle_01_build",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:build",
+      "text": "Red move the ball out wide. Watch how Blue's midfield and defence move across together, keeping their shape."
+    },
+    {
+      "id": "demo_cycle_01_press",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:press",
+      "text": "The nearest midfielder closes down, while the full-back stays behind to provide cover."
+    },
+    {
+      "id": "demo_cycle_01_balance",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:balance",
+      "text": "On the other side, the winger tucks inside and the back four stay connected. That protects the spaces left by the press."
+    },
+    {
+      "id": "demo_cycle_01_recover",
+      "kind": "movement_beat",
+      "sync_event": "cycle:1:recover",
+      "text": "Red play backwards, so Blue ease off the pressure and settle back into their four-five-one shape."
     }
   ]
 }
