@@ -1,29 +1,51 @@
 {
-  "started": "2026-11-04T13:14:05Z",
+  "started": "2026-11-04T13:58:11Z",
   "timings_s": {
     "reference_build_or_cache": 0.0,
-    "model_load": 15.1,
-    "demo_term_03": {
-      "audio_s": 4.804,
-      "synth_s": 88.8,
-      "realtime_factor": 18.5,
-      "attempts": 2
+    "model_load": 20.2,
+    "demo_intro_long": {
+      "audio_s": 9.477,
+      "synth_s": 89.9,
+      "realtime_factor": 9.5,
+      "attempts": 1
     },
-    "total": 106.2
+    "demo_short_01": {
+      "audio_s": 1.607,
+      "synth_s": 29.3,
+      "realtime_factor": 18.2,
+      "attempts": 1
+    },
+    "demo_feedback_b": {
+      "audio_s": 4.314,
+      "synth_s": 48.7,
+      "realtime_factor": 11.3,
+      "attempts": 1
+    },
+    "demo_feedback_c": {
+      "audio_s": 5.67,
+      "synth_s": 54.5,
+      "realtime_factor": 9.6,
+      "attempts": 1
+    },
+    "total": 249.2
   },
   "host": {
-    "python": "3.12.15",
+    "python": "3.12.16",
     "cpu_count": 4,
     "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
   },
   "regenerated": [
-    "demo_term_03"
+    "demo_intro_long",
+    "demo_short_01",
+    "demo_feedback_b",
+    "demo_feedback_c"
   ],
   "skipped": [
     "demo_scene_01",
     "demo_beat_01",
     "demo_term_01",
     "demo_term_02",
+    "demo_term_03",
     "demo_feedback_a"
   ],
   "failures": []

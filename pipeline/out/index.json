@@ -419,6 +419,270 @@
         "total_seconds": 50.9,
         "generated_at": "2026-11-04T13:01:25Z"
       }
+    },
+    {
+      "id": "demo_intro_long",
+      "kind": "scene",
+      "sync_event": "scene:D0",
+      "file": "out/demo_intro_long.mp3",
+      "text_source": "Welcome to the audio test. The clips you hear are placeholders, so the words will not describe the movement on screen. The point is to check timing, pausing and captions.",
+      "text_spoken": "Welcome to the audio test. The clips you hear are placeholders, so the words will not describe the movement on screen. The point is to check timing, pausing and captions.",
+      "fingerprint": "57b5214560cc07ab7c16e89e678eb1de3519b70cf5125edee633eb3f79353d1c",
+      "sha256": "3fb5e054fff5c3caaefbd2aac4a9f18b74fcd22ec98afb2b6cd2dd34e47a21a6",
+      "duration_s": 9.477,
+      "integrated_lufs": -16.26,
+      "true_peak_dbtp": -2.73,
+      "gain_db": 2.64,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "Welcome to the audio test. The clips you hear are placeholders, so the words will not describe the movement on screen. The point is to check timing, pausing and captions.",
+        "wer": 0.0,
+        "words_per_second": 3.17,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 9.56,
+          "duration_s": 9.477,
+          "synth_s": 89.9,
+          "wer": 0.0,
+          "words_per_second": 3.17,
+          "lufs": -16.26,
+          "true_peak": -2.73,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 89.9,
+        "total_seconds": 92.1,
+        "generated_at": "2026-11-04T14:00:03Z"
+      }
+    },
+    {
+      "id": "demo_short_01",
+      "kind": "movement_beat",
+      "sync_event": "cycle:0:short",
+      "file": "out/demo_short_01.mp3",
+      "text_source": "Watch the shape closely.",
+      "text_spoken": "Watch the shape closely.",
+      "fingerprint": "14415621a4b1258e711c82acb6f5bd6ffdc062e9036d3cf266cce760dd612238",
+      "sha256": "f3c236f262396e2c24ec8463b00d8fd580a39377cce6f8e6ca727e47e949f82d",
+      "duration_s": 1.607,
+      "integrated_lufs": -16.2,
+      "true_peak_dbtp": -2.78,
+      "gain_db": 6.73,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "Watch the shape closely.",
+        "wer": 0.0,
+        "words_per_second": 2.49,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 1.8,
+          "duration_s": 1.607,
+          "synth_s": 29.3,
+          "wer": 0.0,
+          "words_per_second": 2.49,
+          "lufs": -16.2,
+          "true_peak": -2.78,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 29.3,
+        "total_seconds": 30.5,
+        "generated_at": "2026-11-04T14:00:33Z"
+      }
+    },
+    {
+      "id": "demo_feedback_b",
+      "kind": "answer_feedback",
+      "sync_event": "answer_feedback:D-Q1:B",
+      "file": "out/demo_feedback_b.mp3",
+      "text_source": "Not quite. Have another look at how the nearby players move to help each other.",
+      "text_spoken": "Not quite. Have another look at how the nearby players move to help each other.",
+      "fingerprint": "4fed6b74e961ce3d3539d10d2d50fd48012a3d026c0a0401e6028a79b6142322",
+      "sha256": "f9ec2da7c495398fbeb56c69e4366ee619bcc2ba933a73dbea839e9feb40d275",
+      "duration_s": 4.314,
+      "integrated_lufs": -16.13,
+      "true_peak_dbtp": -2.73,
+      "gain_db": 2.88,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "Not quite. Have another look at how the nearby players move to help each other.",
+        "wer": 0.0,
+        "words_per_second": 3.48,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 4.8,
+          "duration_s": 4.314,
+          "synth_s": 48.7,
+          "wer": 0.0,
+          "words_per_second": 3.48,
+          "lufs": -16.13,
+          "true_peak": -2.73,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 48.7,
+        "total_seconds": 50.4,
+        "generated_at": "2026-11-04T14:01:24Z"
+      }
+    },
+    {
+      "id": "demo_feedback_c",
+      "kind": "answer_feedback",
+      "sync_event": "answer_feedback:D-Q1:C",
+      "file": "out/demo_feedback_c.mp3",
+      "text_source": "That is a common instinct, but it leaves gaps. Watch the next sequence and see where the space opens up.",
+      "text_spoken": "That is a common instinct, but it leaves gaps. Watch the next sequence and see where the space opens up.",
+      "fingerprint": "3e2f1410fbaaa308c36b688e1fd159dd087d4a44c95d41ed25a45d899db7847a",
+      "sha256": "5950d1a2cfbfe8bbf706af2d02170e5222c60033eb4cedcf9e796d0d756e96cd",
+      "duration_s": 5.67,
+      "integrated_lufs": -16.29,
+      "true_peak_dbtp": -2.73,
+      "gain_db": 3.54,
+      "loudness_ok": true,
+      "qa": {
+        "transcript": "That is a common instinct, but it leaves gaps. Watch the next sequence and see where the space opens up.",
+        "wer": 0.0,
+        "words_per_second": 3.53,
+        "key_terms_heard": {},
+        "failures": [],
+        "passed": true
+      },
+      "attempt_log": [
+        {
+          "attempt": 1,
+          "seed": 20261104,
+          "raw_audio_s": 5.84,
+          "duration_s": 5.67,
+          "synth_s": 54.5,
+          "wer": 0.0,
+          "words_per_second": 3.53,
+          "lufs": -16.29,
+          "true_peak": -2.73,
+          "failures": []
+        }
+      ],
+      "qa_status": "passed",
+      "review_status": "unreviewed",
+      "generation": {
+        "model_hf_repo": "ResembleAI/chatterbox",
+        "model_revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+        "versions": {
+          "chatterbox-tts": "0.1.7",
+          "torch": "2.6.0+cpu",
+          "numpy": "1.26.4",
+          "ffmpeg": "6.1.1-3ubuntu5"
+        },
+        "settings": {
+          "exaggeration": 0.6,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0,
+          "torch_threads": 4,
+          "base_seed": 20261104,
+          "seed_used": 20261104,
+          "attempts": 1
+        },
+        "reference_sha256": "774ebff38275cb7ccc79e1c39d2d917da36aaa10e4fff05417a2994386c3b5d0",
+        "pronunciation_version": 1,
+        "generation_seconds": 54.5,
+        "total_seconds": 56.0,
+        "generated_at": "2026-11-04T14:02:20Z"
+      }
     }
   ]
 }
